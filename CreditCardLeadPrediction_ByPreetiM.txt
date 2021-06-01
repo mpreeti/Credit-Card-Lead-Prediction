@@ -1,0 +1,29 @@
+JOB-A-THON - May 2021
+Credit Card Lead Prediction
+
+AIM: The Happy Customer Bank wants to cross sell its credit cards to its existing customers.
+     Expectation is to help in identifying customers that could show higher intent towards a recommended credit card.
+
+S/W use: Pycharm IDE ,Python,ML Libraries
+
+Approach:1.Exploratory Data Analysis(Univariate, Bivariate)Visualization 
+         of class imbalancement ,Plotting graphs of features to find any 
+         meaningful insight
+         Data Preprocessing--Insight of Data,Dropping null values, Replacing with desired values 
+         Model Building-- Used Stratified KFold cross validation technique to get auc_roc_score
+         Tried out 2 different models(XGBM Boosting method, Light Gradient Boosting(LGB) method.
+         Testing--Generated test predictions, Created submission file for final evaluation for the contest.
+
+         2.In Data Processing, firstly checked the nature of the data(ie shape,datatypes,Null values,etc)
+          Then carried out EDA(Univariate analysis and Bivariate analysis to understand how the feature variables are
+          contributing to Target variable(Is_Lead) with the help of Graphs(Matplotlib,seaborn libraries in python).
+          Created clean data by removing unwanted variables,filling Null values for further process.
+      
+        3. After EDA, next step was to finally calculate auc_roc_score based on model used and append the predicted probabilities to submission file.
+           I tried, LGBclassifier, Xgbm Classifier,RFclassifier. Out of which LGBclassifier gave 0.851076578927776 score on leaderboard.
+           It performed better than other models.Took less time to execute as compared to Xgbm classifier .RF classifier didnt worked well so I didn't include 
+           that part in the code.
+           And the final submission is based on LGBclassifier with auc-roc_score  0.8486211556597633.
+           The reason I selected Boosting algorithms as these algorithm combines number of weak learners to strong learners.Also, LGB classifier handles Categorical values 
+           very well and takes lesser time to run on huge dataset.It basically uses tree-based algorithm and follows leaf-wise approach while other algos work in a level-wise approach.
+          
